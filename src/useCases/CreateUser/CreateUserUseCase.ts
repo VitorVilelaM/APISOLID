@@ -11,7 +11,7 @@ export class CreateUserUseCase {
 
     async execute(data: ICreateUserRequestDTO) {
         const userAlreadyExists = await this.usersRepository.findByEmail(data.email);
-        
+
         if (userAlreadyExists) {
             throw new Error('User already exists.');
         }
@@ -27,8 +27,8 @@ export class CreateUserUseCase {
                 name: "Equipe do meu APP",
                 email: "equipe@meuapp.com"
             },
-            subject:'Seja bem-vindo a plataforma',
-            body:'<p>Você já pode fazer login na nossa plataforma.</p>'
+            subject: 'Seja bem-vindo a plataforma',
+            body: '<p>Você já pode fazer login na nossa plataforma.</p>'
         })
     }
 }
